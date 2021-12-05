@@ -9,6 +9,7 @@ public class UserService {
 
 
     public boolean login(String userName,String passwd) throws Exception{
+        int a = 1;
         return userdao.login(userName, passwd) == 1;//三目运算
     }
 
