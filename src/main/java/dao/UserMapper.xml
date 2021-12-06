@@ -20,8 +20,9 @@
 <!--DELETE FROM Orders WHERE id=#{id}-->
 <!--    </delete>-->
 
-<!--    <select id="selectXue" resultType="Beans.Orders">-->
-<!--  select * from orders where CustomerName LIKE CONCAT(CONCAT('%',#{name}),'%')    </select>-->
+    <select id="loginRequest" resultType="entity.User">
+  select * from `user` where `name`=#{name} and pwd=#{pwd}
+  </select>
 
 
 </mapper>

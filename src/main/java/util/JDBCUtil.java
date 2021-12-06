@@ -6,20 +6,20 @@ import java.sql.*;
 import java.util.Properties;
 
 public class JDBCUtil {
-    private static String url;
-    private static String user;
-    private static String password;
-    private static String driver;
+    private static String url="jdbc:mysql://localhost:3306/rsndm?useUnicode=true&characterEncoding=UTF8&serverTimezone=GMT";
+    private static String user="root";
+    private static String password="123456";
+    private static String driver="com.mysql.jdbc.Driver";
 
     static{
         try {
             Properties properties = new Properties();
-            FileInputStream fis = new FileInputStream(new File("mysql.properties"));
-            properties.load(fis);//以流的形式家在配置文件
-            url = properties.getProperty("url");//通过key-value的方式那资源
-            user = properties.getProperty("username");
-            password = properties.getProperty("password");
-            driver = properties.getProperty("driver");
+//            FileInputStream fis = new FileInputStream(new File("resources/mysql.properties"));
+//            properties.load(fis);//以流的形式家在配置文件
+//            url = properties.getProperty("url");//通过key-value的方式那资源
+//            user = properties.getProperty("username");
+//            password = properties.getProperty("password");
+//            driver = properties.getProperty("driver");
             Class.forName(driver);
         } catch (Exception e) {
 

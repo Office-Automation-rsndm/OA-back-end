@@ -29,20 +29,17 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String userName = request.getParameter("username");
         String passwd =request.getParameter("password");
-
+        userName="oyy";
+        passwd="123";
        //乱码
+        try {
+            userService.login(userName,passwd);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         response.setHeader("content-type", "application/json;charset=UTF-8");
         response.setCharacterEncoding("UTF-8");
-       try {
-           if (userService.login(userName, passwd)) {
-               result.setStatus(200);
-           }else{
-               result.setStatus(-1);
-           }
-       }catch(Exception e){
-               result.setStatus(-1);
 
-       }
-         response.getWriter().write(objectMapper.writeValueAsString(result));
+//         response.getWriter().write(objectMapper.writeValueAsString(result));
     }
 }
