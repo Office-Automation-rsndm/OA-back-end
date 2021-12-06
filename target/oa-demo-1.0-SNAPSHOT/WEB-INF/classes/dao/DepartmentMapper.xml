@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="dao.DepartmentMapper">
+
+<!--    <insert id="insertOrders" parameterType="Beans.Orders" keyProperty="id"-->
+<!--            useGeneratedKeys="true" >-->
+<!--    insert into orders(CustomerName,CustomerAddress,CreateTime,TotalPrice)-->
+<!--    values(#{customerName},#{customerAddress},#{createTime},#{totalPrice})-->
+<!--    </insert>-->
+<!--    <insert id="insertOrdersDetail" parameterType="Beans.OrderDetail">-->
+<!--        insert into orderdetail(orderId,ProductName,ProductType,Price,Cont) values-->
+<!--        <foreach collection="list" item="o" separator=",">-->
+<!--        (#{orderId},#{o.productName},#{o.productType},#{o.price},#{o.cont})-->
+<!--        </foreach>-->
+
+
+<!--    </insert>-->
+<!--    <delete id="deleteOrders">-->
+<!--DELETE FROM Orders WHERE id=#{id}-->
+<!--    </delete>-->
+
+<!--    <select id="selectXue" resultType="Beans.Orders">-->
+<!--  select * from orders where CustomerName LIKE CONCAT(CONCAT('%',#{name}),'%')    </select>-->
+
+
+</mapper>
