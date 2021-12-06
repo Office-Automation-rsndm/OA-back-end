@@ -2,6 +2,7 @@ package servlet;
 
 import bean.User;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import service.Impl.UserServiceImpl;
 import service.UserService;
 
 import javax.servlet.ServletException;
@@ -13,7 +14,7 @@ import java.io.IOException;
 
 @WebServlet("/SelectFromIdServlet")
 public class SelectFromIdServlet extends HttpServlet {
-    private UserService userService = new UserService();
+    private UserServiceImpl userService = new UserServiceImpl();
 
     private ObjectMapper objectMapper =new ObjectMapper();
 

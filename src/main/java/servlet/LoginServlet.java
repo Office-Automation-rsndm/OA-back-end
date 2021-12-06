@@ -1,6 +1,7 @@
 package servlet;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import service.Impl.UserServiceImpl;
 import service.UserService;
 import util.Result;
 
@@ -15,9 +16,9 @@ import java.io.IOException;
 public class LoginServlet extends HttpServlet {
 
     //把service注入过来
-    private UserService userService = new UserService();
+    private UserServiceImpl userService = new UserServiceImpl();
 
-    private ObjectMapper objectMapper =new ObjectMapper();
+    private ObjectMapper objectMapper = new ObjectMapper();
 
     private  Result result =new Result();
 
