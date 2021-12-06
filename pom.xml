@@ -16,10 +16,29 @@
 
   <dependencies>
     <dependency>
+<<<<<<< HEAD
       <groupId>javax.servlet</groupId>
       <artifactId>javax.servlet-api</artifactId>
       <version>3.0.1</version>
       <scope>provided</scope>
+=======
+      <groupId>org.mybatis</groupId>
+      <artifactId>mybatis</artifactId>
+      <version>3.4.6</version>
+
+    </dependency>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>3.0.1</version>
+
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.10</version>
+      <scope>test</scope>
+>>>>>>> b8da3efd94bbc98bb06dd6a34d2e8667e1b1ed80
     </dependency>
     <dependency>
       <groupId>mysql</groupId>
@@ -34,6 +53,18 @@
   </dependencies>
 
   <build>
+<<<<<<< HEAD
+=======
+    <resources>
+      <resource>
+        <directory>src/main/java</directory>
+        <includes>
+          <include>**/*.xml</include>
+        </includes>
+      </resource>
+    </resources>
+
+>>>>>>> b8da3efd94bbc98bb06dd6a34d2e8667e1b1ed80
     <plugins>
       <plugin>
         <groupId>org.apache.tomcat.maven</groupId>
