@@ -8,5 +8,5 @@ public interface UserService {
     User selectFromId(int id);
     void updatePwd(int id, String pwd);
     void updateName(int id, String name);
-    void updateState(int id, String State);
+    void updateState(int id, String state);
 }
