@@ -27,7 +27,7 @@
     <!--注册-->
     <insert id="registerUser" parameterType="bean.User"  useGeneratedKeys="true" keyProperty="id"
             >
-    insert into user (`name`, pwd, department_id ,state) values (#{name}, #{pwd},#{departmentId},#{state});
+    insert into `user` (`name`, pwd, department_id ,state) values (#{name}, #{pwd},#{departmentId},#{state});
     </insert>
 <!--根据id获取个人信息-->
   <select id="selectFromId" resultType="bean.User">
