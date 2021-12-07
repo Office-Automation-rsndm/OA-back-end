@@ -1,7 +1,6 @@
 package servlet;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import service.Impl.UserServiceImpl;
 import service.UserService;
 import util.Result;
 
@@ -16,9 +15,9 @@ import java.io.IOException;
 public class LoginServlet extends HttpServlet {
 
     //把service注入过来
-    private UserServiceImpl userService = new UserServiceImpl();
+    private UserService userService = new UserService();
 
-    private ObjectMapper objectMapper = new ObjectMapper();
+    private ObjectMapper objectMapper =new ObjectMapper();
 
     private  Result result =new Result();
 
@@ -32,10 +31,10 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String userName = request.getParameter("username");
-        String passwd =request.getParameter("password");
-        userName="oyy";
-        passwd="123";
+        String userName = request.getParameter("userName");
+        String passwd =request.getParameter("pwd");
+
+        System.out.println(userName+passwd);
        //乱码
         try {
             userService.login(userName,passwd);

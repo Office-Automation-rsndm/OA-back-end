@@ -3,7 +3,6 @@ package servlet;
 
 import bean.User;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import service.Impl.UserServiceImpl;
 import service.UserService;
 
 import javax.servlet.ServletException;
@@ -15,7 +14,7 @@ import java.io.IOException;
 
 @WebServlet("/api/register")
 public class RegisterServlet extends HttpServlet {
-    private UserServiceImpl userService = new UserServiceImpl();
+    private UserService userService = new UserService();
 
     private ObjectMapper objectMapper =new ObjectMapper();
 

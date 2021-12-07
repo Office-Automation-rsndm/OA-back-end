@@ -19,9 +19,9 @@ public class UserServiceImpl {
     public UserServiceImpl() throws IOException {
     }
 
-    public boolean login(String userName,String passwd) throws Exception {
-        System.out.println(mapper.loginRequest("oyy","123"));
-        return true;
+    public User login(String userName,String passwd) throws Exception {
+      User user =  mapper.loginRequest(userName,passwd);
+        return user!=null ? user : null;
     }
 
     public void registerUser(User user) throws IOException {
