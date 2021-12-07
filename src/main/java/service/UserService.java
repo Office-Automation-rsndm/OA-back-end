@@ -16,16 +16,16 @@ public class UserService {
     SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(r);
     SqlSession sqlSession =  sqlSessionFactory.openSession();
     UserMapper mapper= sqlSession.getMapper(UserMapper.class);
-    public UserService() throws IOException {
-    }
+    public UserService() throws IOException { }
 
 
 
 
     public boolean login(String userName,String passwd) throws Exception {
 
-        System.out.println(mapper.loginRequest("oyy","123"));
-        return true;
+        System.out.println(mapper.loginRequest(userName,passwd));
+        User user= mapper.loginRequest(userName, passwd);
+        return user!=null ? true : false;
     }
 
     public void registerUser(User user) throws IOException {

@@ -31,10 +31,10 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String userName = request.getParameter("username");
-        String passwd =request.getParameter("password");
-        userName="oyy";
-        passwd="123";
+        String userName = request.getParameter("userName");
+        String passwd =request.getParameter("pwd");
+
+        System.out.println(userName+passwd);
        //乱码
         try {
             userService.login(userName,passwd);
