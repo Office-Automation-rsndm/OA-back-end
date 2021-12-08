@@ -23,5 +23,14 @@
 <!--    <select id="selectXue" resultType="Beans.Orders">-->
 <!--  select * from orders where CustomerName LIKE CONCAT(CONCAT('%',#{name}),'%')    </select>-->
 
+    <!--获取部门id列表-->
+    <select id="getDepartmentIdList" resultType="Integer">
+        select id from `department`
+    </select>
+
+    <!--根据部门id获取人员名单-->
+    <select id="getDepartmentPersonList" resultType="bean.User">
+        select * from `user` where department_id = #{id}
+    </select>
 
 </mapper>

@@ -30,16 +30,19 @@ public class UserServiceImpl {
     }
 
     public User selectFromId(int id){
-        User user=mapper.selectFromId(id);
+        User user = mapper.selectFromId(id);
         return user;
     }
     void updatePwd(int id, String pwd) {
-
+        mapper.updatePwd(id, pwd);
+        sqlSession.commit();
     }
     void updateName(int id, String name) {
-
+        mapper.updateName(id, name);
+        sqlSession.commit();
     }
-    void updateState(int id, String State) {
-
+    void updateState(int id, String state) {
+        mapper.updateState(id, state);
+        sqlSession.commit();
     }
 }

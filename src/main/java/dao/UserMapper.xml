@@ -20,17 +20,34 @@
 <!--DELETE FROM Orders WHERE id=#{id}-->
 <!--    </delete>-->
 
-<!--登录验证-->
+    <!--登录验证-->
     <select id="loginRequest" resultType="bean.User">
   select * from `user` where `name`=#{name} and pwd=#{pwd}
   </select>
+
     <!--注册-->
     <insert id="registerUser" parameterType="bean.User"  useGeneratedKeys="true" keyProperty="id"
             >
     insert into `user` (`name`, pwd, department_id ,state) values (#{name}, #{pwd},#{departmentId},#{state});
     </insert>
-<!--根据id获取个人信息-->
+
+    <!--根据id获取个人信息-->
   <select id="selectFromId" resultType="bean.User">
   select * from `user` where id=#{id}
   </select>
+
+    <!--根据id更改用户密码-->
+    <update id="updatePwd" parameterType="bean.User">
+        update `user` set pwd = #{pwd} where id = #{id}
+    </update>
+
+    <!--根据id更改用户姓名-->
+    <update id="updateName" parameterType="bean.User">
+        update `user` set `name` = #{name} where id = #{id}
+    </update>
+
+    <!--根据id更改用户状态-->
+    <update id="updateState" parameterType="bean.User">
+        update `user` set state = #{state} where id = #{id}
+    </update>
 </mapper>
