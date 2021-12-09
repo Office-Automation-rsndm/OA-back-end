@@ -1,5 +1,6 @@
 package service.Impl;
 
+import bean.Department;
 import bean.User;
 import dao.DepartmentMapper;
 import dao.UserMapper;
@@ -7,12 +8,13 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import service.DepartmentService;
 
 import java.io.IOException;
 import java.io.Reader;
 import java.util.List;
 
-public class DepartmentServiceImpl {
+public class DepartmentServiceImpl implements DepartmentService {
     Reader r;
     {
         try {
@@ -25,10 +27,10 @@ public class DepartmentServiceImpl {
     SqlSession sqlSession =  sqlSessionFactory.openSession();
     DepartmentMapper mapper = sqlSession.getMapper(DepartmentMapper.class);
 
-    List<Integer> getDepartmentIdList() {
-        return mapper.getDepartmentIdList();
+    public List<Department> getDepartmentList() {
+        return mapper.getDepartmentList();
     }
-    List<User> getDepartmentPersonList(int id) {
+    public List<User> getDepartmentPersonList(int id) {
         return mapper.getDepartmentPersonList(id);
     }
 }

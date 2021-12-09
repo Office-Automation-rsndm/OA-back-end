@@ -5,11 +5,12 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import service.UserService;
 
 import java.io.IOException;
 import java.io.Reader;
 
-public class UserServiceImpl {
+public class UserServiceImpl implements UserService{
     //把数据持久层注入过来
     Reader r = Resources.getResourceAsReader("Mybatis-config.xml");
     SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(r);
@@ -19,12 +20,12 @@ public class UserServiceImpl {
     public UserServiceImpl() throws IOException {
     }
 
-    public User login(String userName,String passwd) throws Exception {
-      User user =  mapper.loginRequest(userName,passwd);
+    public User login(String name,String passwd)  {
+      User user =  mapper.loginRequest(name,passwd);
         return user!=null ? user : null;
     }
 
-    public void registerUser(User user) throws IOException {
+    public void registerUser(User user)  {
         mapper.registerUser(user);
         sqlSession.commit();
     }
@@ -33,15 +34,15 @@ public class UserServiceImpl {
         User user = mapper.selectFromId(id);
         return user;
     }
-    void updatePwd(int id, String pwd) {
+   public void updatePwd(int id, String pwd) {
         mapper.updatePwd(id, pwd);
         sqlSession.commit();
     }
-    void updateName(int id, String name) {
+    public void updateName(int id, String name) {
         mapper.updateName(id, name);
         sqlSession.commit();
     }
-    void updateState(int id, String state) {
+    public void updateState(int id, String state) {
         mapper.updateState(id, state);
         sqlSession.commit();
     }
